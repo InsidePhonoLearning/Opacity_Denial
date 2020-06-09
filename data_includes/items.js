@@ -270,23 +270,92 @@ for (var block_num = 0; block_num < 4; block_num++){
 // BUILD ITEMS ARRAY
 //***********************
 
+//Pieces of the "intro" screen:
+instruct = "<div style='padding:50px;'><h1>Instructions:</h1><p>In this experiment, you will be asked to learn aspects of an imaginary 'alien' language. The experiment should take about 30 minutes.<p><ul><li>First, you'll answer five questions about English to practice using the experiment software. Once you've answered those, you'll move onto the Training Phase.</li><li>In the Training Phase you'll be asked questions about the alien language, and you'll receive feedback on your answers. It's okay to guess at first, since you'll be learning by trial and error. When you've finished this section, feel free to take a break.</li><li>Languages often add suffixes to words (for example, adding 's' to 'cat' in order to make the plural form, 'cats'). Throughout the experiment, you'll learn related words. Be sure to pay attention to how they sound when a suffix is added.</li><li>The last section will be the Testing Phase. It will be similar to the Training Phase, but you will no longer receive feedback on your answers.</li></ul>";
+headphones = "<p>Please be sure to wear headphones while participating and do not take notes of any kind during the Training Section.";
+contact = "Feel free to contact the researcher at bprickett@umass.edu if you have any questions regarding the experiment.</p>";
+browser = "<p>Note: This experiment will not work properly with Internet Explorer or Safari. <span style='font-weight: bold;color:red;'>If you are using these browsers, you will not be compensated.</span> Please use another browser, such as: Google Chrome, Microsoft Edge, Firefox, or Opera.</p>";
+consent = "<input type='checkbox' id='consent' name='consent' class='obligatory'>I have read the <a href='http://people.umass.edu/bprickett/ConsentForm_OpDen.pdf' target='_blank'>consent form</a> and agree to participate in this experiment.</div>";
+      
 //Start material:
 var items = [
                ["preload", "Preloader", {images: IMAGES_TO_PRELOAD}], 
                [
                    "intro", 
-                   "my_Separator", 
+                   "Form", 
                    {
-                       normalMessage: "<div style='padding:50px;'><h1>Instructions:</h1><p>In this experiment, you will be asked to learn aspects of an imaginary 'alien' language. The experiment should take about 30 minutes.<p><ul><li>First, you'll answer three questions about English to practice using the experiment software. Once you've answered these correctly, you'll move onto the Training Section.</li><li>In the Training Section you'll be asked questions about the alien language, and you'll receive feedback on your answers. It's okay to guess at first, since you'll be learning by trial and error. When you've finished this section, feel free to take a break.</li><li>Languages often add suffixes to words (for example, adding 's' to 'cat' in order to make the plural form, 'cats'). Throughout the experiment, you'll learn related words. Be sure to pay attention to how they sound when a suffix is added.</li><li>The last section will be the Testing Section. It will be similar to the Training Section, but you will no longer recieve feedback on your answers.</li></ul><p>Please be sure to wear headphones while participating and do not take notes of any kind during the Training Section. Feel free to contact the researcher at bprickett@umass.edu if you have any questions regarding the experiment.</p><p><b>Note: This experiment may not work with Internet Explorer and Safari.</b> Please use another browser, such as: Google Chrome, Microsoft Edge, Firefox, or Opera. </p></p><b>Press any key to continue.</b></div>", 
-                       errorMessage: "",
-                       transfer:"keypress",
-                       ignoreFailure: true
+                       html: instruct.concat(headphones).concat(contact).concat(browser).concat(consent),
+                       consentRequired: true,
+                       transfer: "click"
                    }
                ],
-               ["headphone_check", "Form", {consentRequired: false, html:"<b>What kind of headphones are you using? (Please be as descriptive as possible)</b><br><br>"+'<textarea rows="3" cols="60" name="headphones"></textarea><br><br>'}],
+               ["headphone_check", "Form", {consentRequired: false, html:"<b>What kind of headphones are you using? (Please be as descriptive as possible)</b><br><br>"+'<textarea rows="3" cols="60" name="headphones" class="obligatory"></textarea><br><br>'}],
                ["sep", "Separator", {normalMessage:"Press any key to continue.", errorMessage:"Press any key to continue.", transfer:"keypress", ignoreFailure: true}],
-               ["feedback", "my_Separator", {normalMessage:"<img src='https://people.umass.edu/bprickett/Phono_IE_Stimuli/Check_Pic.png'>", errorMessage:"<img src='https://people.umass.edu/bprickett/Phono_IE_Stimuli/X_pic.png'>", transfer:1000, ignoreFailure: false}]];
+               ["feedback", "my_Separator", {normalMessage:"<img src='https://people.umass.edu/bprickett/Phono_IE_Stimuli/Check_Pic.png'>", errorMessage:"<img src='https://people.umass.edu/bprickett/Phono_IE_Stimuli/X_pic.png'>", transfer:1000, ignoreFailure: false}]
+             ];
 
+//Practice Questions
+        
+//Q1: can[s] vs. can[z]
+var pq1_a = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/bin[s].wav' type='audio/wav'></audio>";
+var pq1_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/bin[z].wav' type='audio/wav'></audio>";                   
+        
+var pq1_choices_html = silence_one.concat(silence_two).concat(pq1_a).concat(pq1_b).concat(player_functions).concat("<table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>");
+var pq1_stem_html = "<table align='center'><tr><td><img src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/bin.png'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls autoplay id='answer_audio' align='center'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/bin.wav' type='audio/wav'></audio></td></tr></table>";
+          
+items.push(["pq_stem_1", "my_Separator", {normalMessage:pq1_stem_html, errorMessage:"", transfer:2500}]);
+items.push(["pq_choice_1", "ComicCaption", {s:"", q:pq1_choices_html, html:"http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/bin.png", mean:"Practice", hasCorrect:"B", as:["A", "B"]}]);
+
+//Q2: kisses vs. kishes
+var pq2_a = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kisses.wav' type='audio/wav'></audio>";        
+var pq2_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kishes.wav' type='audio/wav'></audio>";                   
+        
+var pq2_choices_html = silence_one.concat(silence_two).concat(pq2_a).concat(pq2_b).concat(player_functions).concat("<table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>");
+var pq2_stem_html = "<table align='center'><tr><td><img src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.png'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls autoplay id='answer_audio' align='center'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.wav' type='audio/wav'></audio></td></tr></table>";
+          
+items.push(["pq_stem_2", "my_Separator", {normalMessage:pq2_stem_html, errorMessage:"", transfer:2500}]);
+items.push(["pq_choice_2", "ComicCaption", {s:"", q:pq2_choices_html, html:"http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.png", mean:"Practice", hasCorrect:"A", as:["A", "B"]}]);
+   
+//Q3: lea[vz] vs. lea[fs]
+var pq3_a = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/lea[vz].wav' type='audio/wav'></audio>";        
+var pq3_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/lea[fs].wav' type='audio/wav'></audio>";                   
+        
+var pq3_choices_html = silence_one.concat(silence_two).concat(pq3_a).concat(pq3_b).concat(player_functions).concat("<table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>");
+var pq3_stem_html = "<table align='center'><tr><td><img src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/leaf.png'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls autoplay id='answer_audio' align='center'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/leaf.wav' type='audio/wav'></audio></td></tr></table>";
+          
+items.push(["pq_stem_3", "my_Separator", {normalMessage:pq3_stem_html, errorMessage:"", transfer:2500}]);
+items.push(["pq_choice_3", "ComicCaption", {s:"", q:pq3_choices_html, html:"http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/leaf.png", mean:"Practice", hasCorrect:"A", as:["A", "B"]}]);
+  
+//Q4: kesses vs. kisses
+var pq4_a = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kesses.wav' type='audio/wav'></audio>";        
+var pq4_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kisses.wav' type='audio/wav'></audio>";                   
+        
+var pq4_choices_html = silence_one.concat(silence_two).concat(pq4_a).concat(pq4_b).concat(player_functions).concat("<table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>");
+var pq4_stem_html = "<table align='center'><tr><td><img src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.png'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls autoplay id='answer_audio' align='center'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.wav' type='audio/wav'></audio></td></tr></table>";
+          
+items.push(["pq_stem_4", "my_Separator", {normalMessage:pq4_stem_html, errorMessage:"", transfer:2500}]);
+items.push(["pq_choice_4", "ComicCaption", {s:"", q:pq4_choices_html, html:"http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.png", mean:"Practice", hasCorrect:"B", as:["A", "B"]}]);
+
+//Q5: roo[vz] vs. roo[fs]
+var pq5_a = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/roo[vz].wav' type='audio/wav'></audio>";        
+var pq5_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/roo[fs].wav' type='audio/wav'></audio>";                   
+        
+var pq5_choices_html = silence_one.concat(silence_two).concat(pq5_a).concat(pq5_b).concat(player_functions).concat("<table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>");
+var pq5_stem_html = "<table align='center'><tr><td><img src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/roof.png'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls autoplay id='answer_audio' align='center'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/roof.wav' type='audio/wav'></audio></td></tr></table>";
+          
+items.push(["pq_stem_5", "my_Separator", {normalMessage:pq5_stem_html, errorMessage:"", transfer:2500}]);
+items.push(["pq_choice_5", "ComicCaption", {s:"", q:pq5_choices_html, html:"http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/roof.png", mean:"Practice", hasCorrect:"A", as:["A", "B"]}]);
+
+items.push(["practice_end", "Message", 
+                   {
+                       html: [
+                               "div",
+                               ["p", "You have now finished the practice questions. You will now begin the Training Phase in which you will be taught an alien language."],
+                               ["p", "Remember, it's okay to guess at first, since you'll be learning by trial and error."]
+                             ]
+                   }
+            ]);
+        
 //Training items...
 items = items.concat(train_bareStems);
 items = items.concat(train_choices);
@@ -347,7 +416,7 @@ items = items.concat([
                    {
                        html: [
                                "div",
-                               ["p", "Now you will begin the test phase. The trials will be similar to the ones in training, however you will no longer recieve any feedback."],
+                               ["p", "Now you will begin the test phase. The trials will be similar to the ones in training, however you will no longer receive any feedback."],
                                ["p", "Additionally, you may sometimes need to choose between two answers that both seem incorrect. Do your best to choose the word that seems the most right in these situations."]
                              ]
                    }
@@ -364,11 +433,16 @@ items = items.concat([
           ]);
 
 //Define sequence of experiment; preload must be first
-var all_trials = ["preload", "intro", "headphone_check"];
+var all_trials = [
+                    "preload", "intro", "headphone_check",
+                    "pq_stem_1", "pq_choice_1", "feedback", "pq_stem_2", "pq_choice_2", "feedback",
+                    "pq_stem_3", "pq_choice_3", "feedback", "pq_stem_4", "pq_choice_4", "feedback",
+                    "pq_stem_5", "pq_choice_5", "feedback", "practice_end"
+                 ];
 if (test_run){
-    all_trials = all_trials.concat(train_names.slice(0,5));
+    all_trials = all_trials.concat(train_names.slice(0,6));
     all_trials = all_trials.concat(["phaseSeperator"]);
-    all_trials = all_trials.concat(test_names.slice(0,5));    
+    all_trials = all_trials.concat(test_names.slice(0,6));    
 }
 else {
     all_trials = all_trials.concat(train_names);

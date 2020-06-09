@@ -27,6 +27,9 @@ jqueryWidget: {
             fullhtml1 = 
               "<table align='center'><tr><td>".concat("<div style='border:0; position:relative;'><img id='stim' style='border:0; position:relative; top: 10px; left: 10px; z-index: 1;' src='").concat(this.options.html).concat("'><img id='arrow' style='border:0; position:absolute; top: 50px; left: 50px; z-index: 2;width:100px;height:100px;' src='").concat(arrow_src).concat("'></div>").concat("</td></tr></table>");  
         }
+        if (meaning == "Practice"){
+            fullhtml1 = "<table align='center'><tr><td></td><td></td><td></td></tr><tr><td></td>".concat(partial_html1).concat("<td></td>").concat(partial_html1).concat("<tr><td></td><td></td><td></td></tr></table>"); 
+        }
         //console.log(fullhtml); //Make sure url is correct
         var opts = {
             options:     this.options,

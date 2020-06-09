@@ -413,3 +413,195 @@
 1589910035,b6d7c8144b73cbe243ffb94eca6f24c8,Form,405,0,survey,NULL,test_approach,no
 1589910035,b6d7c8144b73cbe243ffb94eca6f24c8,Form,405,0,survey,NULL,test_approach,no
 1589910035,b6d7c8144b73cbe243ffb94eca6f24c8,Form,405,0,survey,NULL,test_approach,no
+#
+# Results on Thursday May 28 2020 22:42:35 UTC.
+# USER AGENT: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1 Safari/605.1.15
+# Design number was non-random = 85
+#
+# The lines below this comment are in groups of 2.
+# The formats of the lines in each of these groups are as follows:
+#
+# Line 1:
+#     Col. 1: Time results were received.
+#     Col. 2: MD5 hash of participant's IP address.
+#     Col. 3: Controller name.
+#     Col. 4: Item number.
+#     Col. 5: Element number.
+#     Col. 6: Type.
+#     Col. 7: Group.
+#     Col. 8: Field name.
+#     Col. 9: Field value.
+# Line 2:
+#     Col. 1: Time results were received.
+#     Col. 2: MD5 hash of participant's IP address.
+#     Col. 3: Controller name.
+#     Col. 4: Item number.
+#     Col. 5: Element number.
+#     Col. 6: Type.
+#     Col. 7: Group.
+#     Col. 8: Sentence (or sentence MD5).
+1590705756,056f5849d247748a16aae7fe8f0ac740,Form,2,0,headphone_check,NULL,headphones,bose
+1590705756,056f5849d247748a16aae7fe8f0ac740,ComicCaption,105,0,train_choice_0,NULL,
+# The lines below this comment are in groups of 2.
+# The formats of the lines in each of these groups are as follows:
+#
+# Line 1:
+#     Col. 1: Time results were received.
+#     Col. 2: MD5 hash of participant's IP address.
+#     Col. 3: Controller name.
+#     Col. 4: Item number.
+#     Col. 5: Element number.
+#     Col. 6: Type.
+#     Col. 7: Group.
+#     Col. 8: Question (NULL if none).
+#     Col. 9: Answer.
+#     Col. 10: Whether or not answer was correct (NULL if N/A).
+#     Col. 11: Time taken to answer.
+# Line 2:
+#     Col. 1: Time results were received.
+#     Col. 2: MD5 hash of participant's IP address.
+#     Col. 3: Controller name.
+#     Col. 4: Item number.
+#     Col. 5: Element number.
+#     Col. 6: Type.
+#     Col. 7: Group.
+#     Col. 8: Sentence (or sentence MD5).
+1590705756,056f5849d247748a16aae7fe8f0ac740,ComicCaption,105,0,train_choice_0,NULL,<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Train_Harm_IncorrectChoice_F_2.wav' type='audio/wav'></audio><audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Train_Harm_CorrectChoice_F_2.wav' type='audio/wav'></audio><script>function audioEndPreA() {a = document.getElementById('option_A');a.style.color = 'red';a.style.fontWeight = 'bold';document.getElementById('a_player').play();}function audioEndPostA() {a = document.getElementById('option_A');a.style.color = 'black';a.style.fontWeight = 'normal';document.getElementById('sil_2').play();}function audioEndPreB() {b = document.getElementById('option_B');b.style.color = 'red';b.style.fontWeight = 'bold';document.getElementById('b_player').play();}function audioEndPostB() {b = document.getElementById('option_B'); b.style.color = 'black';b.style.fontWeight = 'normal';}</script><table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>,B,1,5935
+1590705756,056f5849d247748a16aae7fe8f0ac740,ComicCaption,106,0,train_choice_1,NULL,
+1590705756,056f5849d247748a16aae7fe8f0ac740,ComicCaption,106,0,train_choice_1,NULL,<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Train_Inter_IncorrectChoice_F_1.wav' type='audio/wav'></audio><audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Train_Inter_CorrectChoice_F_1.wav' type='audio/wav'></audio><script>function audioEndPreA() {a = document.getElementById('option_A');a.style.color = 'red';a.style.fontWeight = 'bold';document.getElementById('a_player').play();}function audioEndPostA() {a = document.getElementById('option_A');a.style.color = 'black';a.style.fontWeight = 'normal';document.getElementById('sil_2').play();}function audioEndPreB() {b = document.getElementById('option_B');b.style.color = 'red';b.style.fontWeight = 'bold';document.getElementById('b_player').play();}function audioEndPostB() {b = document.getElementById('option_B'); b.style.color = 'black';b.style.fontWeight = 'normal';}</script><table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>,B,1,5570
+1590705756,056f5849d247748a16aae7fe8f0ac740,ComicCaption,305,0,test_choice_0,NULL,
+1590705756,056f5849d247748a16aae7fe8f0ac740,ComicCaption,305,0,test_choice_0,NULL,<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Test_Harm_old_CorrectChoice_F_0.wav' type='audio/wav'></audio><audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Test_Harm_old_IncorrectChoice_F_0.wav' type='audio/wav'></audio><script>function audioEndPreA() {a = document.getElementById('option_A');a.style.color = 'red';a.style.fontWeight = 'bold';document.getElementById('a_player').play();}function audioEndPostA() {a = document.getElementById('option_A');a.style.color = 'black';a.style.fontWeight = 'normal';document.getElementById('sil_2').play();}function audioEndPreB() {b = document.getElementById('option_B');b.style.color = 'red';b.style.fontWeight = 'bold';document.getElementById('b_player').play();}function audioEndPostB() {b = document.getElementById('option_B'); b.style.color = 'black';b.style.fontWeight = 'normal';}</script><table align='center'><tr><td align='center'><div align='center'><i>Which of these is the <b>most</b> correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>,A,1,4800
+1590705756,056f5849d247748a16aae7fe8f0ac740,ComicCaption,306,0,test_choice_1,NULL,
+# The lines below this comment are in groups of 2.
+# The formats of the lines in each of these groups are as follows:
+#
+# Line 1:
+#     Col. 1: Time results were received.
+#     Col. 2: MD5 hash of participant's IP address.
+#     Col. 3: Controller name.
+#     Col. 4: Item number.
+#     Col. 5: Element number.
+#     Col. 6: Type.
+#     Col. 7: Group.
+#     Col. 8: Question (NULL if none).
+#     Col. 9: Answer.
+#     Col. 10: Whether or not answer was correct (NULL if N/A).
+#     Col. 11: Time taken to answer.
+# Line 2:
+#     Col. 1: Time results were received.
+#     Col. 2: MD5 hash of participant's IP address.
+#     Col. 3: Controller name.
+#     Col. 4: Item number.
+#     Col. 5: Element number.
+#     Col. 6: Type.
+#     Col. 7: Group.
+#     Col. 8: Field name.
+#     Col. 9: Field value.
+1590705756,056f5849d247748a16aae7fe8f0ac740,ComicCaption,306,0,test_choice_1,NULL,<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Test_Inter_old_CorrectChoice_B_2.wav' type='audio/wav'></audio><audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Test_Inter_old_IncorrectChoice_B_2.wav' type='audio/wav'></audio><script>function audioEndPreA() {a = document.getElementById('option_A');a.style.color = 'red';a.style.fontWeight = 'bold';document.getElementById('a_player').play();}function audioEndPostA() {a = document.getElementById('option_A');a.style.color = 'black';a.style.fontWeight = 'normal';document.getElementById('sil_2').play();}function audioEndPreB() {b = document.getElementById('option_B');b.style.color = 'red';b.style.fontWeight = 'bold';document.getElementById('b_player').play();}function audioEndPostB() {b = document.getElementById('option_B'); b.style.color = 'black';b.style.fontWeight = 'normal';}</script><table align='center'><tr><td align='center'><div align='center'><i>Which of these is the <b>most</b> correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>,A,1,6009
+1590705756,056f5849d247748a16aae7fe8f0ac740,Form,405,0,survey,NULL,age,
+# Columns below this comment are as follows:
+# 1. Time results were received.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Item number.
+# 5. Element number.
+# 6. Type.
+# 7. Group.
+# 8. Field name.
+# 9. Field value.
+1590705756,056f5849d247748a16aae7fe8f0ac740,Form,405,0,survey,NULL,prior_ling_exp,
+1590705756,056f5849d247748a16aae7fe8f0ac740,Form,405,0,survey,NULL,train_description,
+1590705756,056f5849d247748a16aae7fe8f0ac740,Form,405,0,survey,NULL,name="test_description",
+1590705756,056f5849d247748a16aae7fe8f0ac740,Form,405,0,survey,NULL,test_description,
+1590705756,056f5849d247748a16aae7fe8f0ac740,Form,405,0,survey,NULL,aha_description,
+1590705756,056f5849d247748a16aae7fe8f0ac740,Form,405,0,survey,NULL,prolific_id,
+1590705756,056f5849d247748a16aae7fe8f0ac740,Form,405,0,survey,NULL,train_approach,no
+1590705756,056f5849d247748a16aae7fe8f0ac740,Form,405,0,survey,NULL,train_approach,no
+1590705756,056f5849d247748a16aae7fe8f0ac740,Form,405,0,survey,NULL,train_approach,no
+1590705756,056f5849d247748a16aae7fe8f0ac740,Form,405,0,survey,NULL,train_approach,no
+1590705756,056f5849d247748a16aae7fe8f0ac740,Form,405,0,survey,NULL,test_approach,no
+1590705756,056f5849d247748a16aae7fe8f0ac740,Form,405,0,survey,NULL,test_approach,no
+1590705756,056f5849d247748a16aae7fe8f0ac740,Form,405,0,survey,NULL,test_approach,no
+#
+# Results on Tuesday June 09 2020 17:41:08 UTC.
+# USER AGENT: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36
+# Design number was non-random = 86
+#
+# Columns below this comment are as follows:
+# 1. Time results were received.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Item number.
+# 5. Element number.
+# 6. Type.
+# 7. Group.
+# 8. Field name.
+# 9. Field value.
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,1,0,intro,NULL,consent,yes
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,2,0,headphone_check,NULL,headphones,b
+# The lines below this comment are in groups of 2.
+# The formats of the lines in each of these groups are as follows:
+#
+# Line 1:
+#     Col. 1: Time results were received.
+#     Col. 2: MD5 hash of participant's IP address.
+#     Col. 3: Controller name.
+#     Col. 4: Item number.
+#     Col. 5: Element number.
+#     Col. 6: Type.
+#     Col. 7: Group.
+#     Col. 8: Sentence (or sentence MD5).
+# Line 2:
+#     Col. 1: Time results were received.
+#     Col. 2: MD5 hash of participant's IP address.
+#     Col. 3: Controller name.
+#     Col. 4: Item number.
+#     Col. 5: Element number.
+#     Col. 6: Type.
+#     Col. 7: Group.
+#     Col. 8: Question (NULL if none).
+#     Col. 9: Answer.
+#     Col. 10: Whether or not answer was correct (NULL if N/A).
+#     Col. 11: Time taken to answer.
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,6,0,pq_choice_1,NULL,
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,6,0,pq_choice_1,NULL,<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/bin[s].wav' type='audio/wav'></audio><audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/bin[z].wav' type='audio/wav'></audio><script>function audioEndPreA() {a = document.getElementById('option_A');a.style.color = 'red';a.style.fontWeight = 'bold';document.getElementById('a_player').play();}function audioEndPostA() {a = document.getElementById('option_A');a.style.color = 'black';a.style.fontWeight = 'normal';document.getElementById('sil_2').play();}function audioEndPreB() {b = document.getElementById('option_B');b.style.color = 'red';b.style.fontWeight = 'bold';document.getElementById('b_player').play();}function audioEndPostB() {b = document.getElementById('option_B'); b.style.color = 'black';b.style.fontWeight = 'normal';}</script><table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>,B,1,3468
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,8,0,pq_choice_2,NULL,
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,8,0,pq_choice_2,NULL,<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kisses.wav' type='audio/wav'></audio><audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kishes.wav' type='audio/wav'></audio><script>function audioEndPreA() {a = document.getElementById('option_A');a.style.color = 'red';a.style.fontWeight = 'bold';document.getElementById('a_player').play();}function audioEndPostA() {a = document.getElementById('option_A');a.style.color = 'black';a.style.fontWeight = 'normal';document.getElementById('sil_2').play();}function audioEndPreB() {b = document.getElementById('option_B');b.style.color = 'red';b.style.fontWeight = 'bold';document.getElementById('b_player').play();}function audioEndPostB() {b = document.getElementById('option_B'); b.style.color = 'black';b.style.fontWeight = 'normal';}</script><table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>,B,0,3209
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,10,0,pq_choice_3,NULL,
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,10,0,pq_choice_3,NULL,<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/lea[vz].wav' type='audio/wav'></audio><audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/lea[fs].wav' type='audio/wav'></audio><script>function audioEndPreA() {a = document.getElementById('option_A');a.style.color = 'red';a.style.fontWeight = 'bold';document.getElementById('a_player').play();}function audioEndPostA() {a = document.getElementById('option_A');a.style.color = 'black';a.style.fontWeight = 'normal';document.getElementById('sil_2').play();}function audioEndPreB() {b = document.getElementById('option_B');b.style.color = 'red';b.style.fontWeight = 'bold';document.getElementById('b_player').play();}function audioEndPostB() {b = document.getElementById('option_B'); b.style.color = 'black';b.style.fontWeight = 'normal';}</script><table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>,A,1,3646
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,12,0,pq_choice_4,NULL,
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,12,0,pq_choice_4,NULL,<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kesses.wav' type='audio/wav'></audio><audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kisses.wav' type='audio/wav'></audio><script>function audioEndPreA() {a = document.getElementById('option_A');a.style.color = 'red';a.style.fontWeight = 'bold';document.getElementById('a_player').play();}function audioEndPostA() {a = document.getElementById('option_A');a.style.color = 'black';a.style.fontWeight = 'normal';document.getElementById('sil_2').play();}function audioEndPreB() {b = document.getElementById('option_B');b.style.color = 'red';b.style.fontWeight = 'bold';document.getElementById('b_player').play();}function audioEndPostB() {b = document.getElementById('option_B'); b.style.color = 'black';b.style.fontWeight = 'normal';}</script><table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>,B,1,3548
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,14,0,pq_choice_5,NULL,
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,14,0,pq_choice_5,NULL,<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/roo[vz].wav' type='audio/wav'></audio><audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/roo[fs].wav' type='audio/wav'></audio><script>function audioEndPreA() {a = document.getElementById('option_A');a.style.color = 'red';a.style.fontWeight = 'bold';document.getElementById('a_player').play();}function audioEndPostA() {a = document.getElementById('option_A');a.style.color = 'black';a.style.fontWeight = 'normal';document.getElementById('sil_2').play();}function audioEndPreB() {b = document.getElementById('option_B');b.style.color = 'red';b.style.fontWeight = 'bold';document.getElementById('b_player').play();}function audioEndPostB() {b = document.getElementById('option_B'); b.style.color = 'black';b.style.fontWeight = 'normal';}</script><table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>,A,1,3776
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,116,0,train_choice_0,NULL,
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,116,0,train_choice_0,NULL,<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Train_Pal_IncorrectChoice_D_3.wav' type='audio/wav'></audio><audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Train_Pal_CorrectChoice_D_3.wav' type='audio/wav'></audio><script>function audioEndPreA() {a = document.getElementById('option_A');a.style.color = 'red';a.style.fontWeight = 'bold';document.getElementById('a_player').play();}function audioEndPostA() {a = document.getElementById('option_A');a.style.color = 'black';a.style.fontWeight = 'normal';document.getElementById('sil_2').play();}function audioEndPreB() {b = document.getElementById('option_B');b.style.color = 'red';b.style.fontWeight = 'bold';document.getElementById('b_player').play();}function audioEndPostB() {b = document.getElementById('option_B'); b.style.color = 'black';b.style.fontWeight = 'normal';}</script><table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>,B,1,4067
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,117,0,train_choice_1,NULL,
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,117,0,train_choice_1,NULL,<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Train_Inter_CorrectChoice_F_6.wav' type='audio/wav'></audio><audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Train_Inter_IncorrectChoice_F_6.wav' type='audio/wav'></audio><script>function audioEndPreA() {a = document.getElementById('option_A');a.style.color = 'red';a.style.fontWeight = 'bold';document.getElementById('a_player').play();}function audioEndPostA() {a = document.getElementById('option_A');a.style.color = 'black';a.style.fontWeight = 'normal';document.getElementById('sil_2').play();}function audioEndPreB() {b = document.getElementById('option_B');b.style.color = 'red';b.style.fontWeight = 'bold';document.getElementById('b_player').play();}function audioEndPostB() {b = document.getElementById('option_B'); b.style.color = 'black';b.style.fontWeight = 'normal';}</script><table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>,B,0,4529
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,316,0,test_choice_0,NULL,
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,316,0,test_choice_0,NULL,<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Test_Harm_old_IncorrectChoice_F_1.wav' type='audio/wav'></audio><audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Test_Harm_old_CorrectChoice_F_1.wav' type='audio/wav'></audio><script>function audioEndPreA() {a = document.getElementById('option_A');a.style.color = 'red';a.style.fontWeight = 'bold';document.getElementById('a_player').play();}function audioEndPostA() {a = document.getElementById('option_A');a.style.color = 'black';a.style.fontWeight = 'normal';document.getElementById('sil_2').play();}function audioEndPreB() {b = document.getElementById('option_B');b.style.color = 'red';b.style.fontWeight = 'bold';document.getElementById('b_player').play();}function audioEndPostB() {b = document.getElementById('option_B'); b.style.color = 'black';b.style.fontWeight = 'normal';}</script><table align='center'><tr><td align='center'><div align='center'><i>Which of these is the <b>most</b> correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>,B,1,6579
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,317,0,test_choice_1,NULL,
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,ComicCaption,317,0,test_choice_1,NULL,<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio><audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Test_Harm_newAff_CorrectChoice_K_17.wav' type='audio/wav'></audio><audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=I_Language=F_Suffixes=1_Subj1/Test_Harm_newAff_IncorrectChoice_K_17.wav' type='audio/wav'></audio><script>function audioEndPreA() {a = document.getElementById('option_A');a.style.color = 'red';a.style.fontWeight = 'bold';document.getElementById('a_player').play();}function audioEndPostA() {a = document.getElementById('option_A');a.style.color = 'black';a.style.fontWeight = 'normal';document.getElementById('sil_2').play();}function audioEndPreB() {b = document.getElementById('option_B');b.style.color = 'red';b.style.fontWeight = 'bold';document.getElementById('b_player').play();}function audioEndPostB() {b = document.getElementById('option_B'); b.style.color = 'black';b.style.fontWeight = 'normal';}</script><table align='center'><tr><td align='center'><div align='center'><i>Which of these is the <b>most</b> correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>,A,1,4129
+# Columns below this comment are as follows:
+# 1. Time results were received.
+# 2. MD5 hash of participant's IP address.
+# 3. Controller name.
+# 4. Item number.
+# 5. Element number.
+# 6. Type.
+# 7. Group.
+# 8. Field name.
+# 9. Field value.
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,416,0,survey,NULL,age,
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,416,0,survey,NULL,prior_ling_exp,
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,416,0,survey,NULL,train_description,
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,416,0,survey,NULL,name="test_description",
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,416,0,survey,NULL,test_description,
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,416,0,survey,NULL,aha_description,
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,416,0,survey,NULL,prolific_id,
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,416,0,survey,NULL,train_approach,no
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,416,0,survey,NULL,train_approach,no
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,416,0,survey,NULL,train_approach,no
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,416,0,survey,NULL,train_approach,no
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,416,0,survey,NULL,test_approach,no
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,416,0,survey,NULL,test_approach,no
+1591724469,b6d7c8144b73cbe243ffb94eca6f24c8,Form,416,0,survey,NULL,test_approach,no
