@@ -12,7 +12,7 @@ var lang = "F";
 var suff = "1";
 var subj = "1";
 
-var test_run = true;
+var test_run = false;
     
 //Functions
 function shuffle(array) {
@@ -60,7 +60,7 @@ for (i = 0; i < pic_names.length; i ++){
 //***************************************
 
 //General data to keep track of:    
-var audio_dir = "https://people.umass.edu/bprickett/Opacity_Denial/Audio_Heads=".concat(head).concat("_Language=").concat(lang).concat("_Suffixes=").concat(suff).concat("_Subj").concat(subj).concat("/");
+var audio_dir = "https://people.umass.edu/bprickett/Opacity_Denial/Stem Heads=".concat(head).concat("_Language=").concat(lang).concat("_Suffixes=").concat(suff).concat("_Subj").concat(subj).concat("/");
 var c2tt2suffs = {
     
                      "1": {
@@ -81,7 +81,27 @@ var c2tt2suffs = {
                                               "Inter_newAff": ["K"],
                                               "Inter_newType": ["D", "P"],
                                          }
-                           }  
+                           },  
+    
+                     "2": {
+                               "Train": {
+                                              "FaithNoHarm": ["D", "P"],
+                                              "FaithNoPal": ["D", "P"],
+                                              "Harm": ["F", "K", "D", "P"],
+                                              "Inter": ["D", "P"],
+                                              "Pal": ["F", "K"]
+                                         },
+                               "Test":  {
+                                              "FaithNoHarm": ["D", "P"],
+                                              "FaithNoPal": ["D", "P"],
+                                              "Pal": ["F", "K"],
+                                              "Harm_old": ["F", "K", "D", "P"],
+                                              "Harm_newAff": ["B"],
+                                              "Inter_old": ["D", "P"],
+                                              "Inter_newAff": ["B"],
+                                              "Inter_newType": ["F", "K"],
+                                         }
+                           } 
                 };
 
 var trialInfo2Stem = {
@@ -127,14 +147,24 @@ if (suff == "1"){
     }
     suffix_to_meaning["K"] = withheld_mean;
 }
+if (suff == "2") {
+    raw_suffs = ["D", "F", "P", "K"];
+    shuffle(raw_suffs);
+    for (var i=0; i < raw_suffs.length; i++){
+          suffix_to_meaning[raw_suffs[i]] = meanings[i];
+    }
+    suffix_to_meaning["B"] = withheld_mean;    
+}
 
 //HTML to use for audio playing:
+var player_function_stem = "<script>function audioStartStem() {document.getElementById('stem_player').play();}</script>";
 var player_function_1 = "<script>function audioEndPreA() {a = document.getElementById('option_A');a.style.color = 'red';a.style.fontWeight = 'bold';document.getElementById('a_player').play();}";
 var player_function_2 = "function audioEndPostA() {a = document.getElementById('option_A');a.style.color = 'black';a.style.fontWeight = 'normal';document.getElementById('sil_2').play();}";
 var player_function_3 = "function audioEndPreB() {b = document.getElementById('option_B');b.style.color = 'red';b.style.fontWeight = 'bold';document.getElementById('b_player').play();}";
 var player_function_4 = "function audioEndPostB() {b = document.getElementById('option_B'); b.style.color = 'black';b.style.fontWeight = 'normal';}</script>";
 var player_functions = player_function_1.concat(player_function_2).concat(player_function_3).concat(player_function_4);
 
+var stem_silence = "<audio style='visibility:hidden;' id='sil_stem' controls autoplay onended='audioStartStem()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio>";
 var silence_one = "<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio>";
 var silence_two = "<audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio>";
   
@@ -175,7 +205,7 @@ for (var block_num = 0; block_num < 5; block_num++){
         //Build the two pages that have audio in them:
         var choices_html = silence_one.concat(silence_two).concat(audio_a).concat(audio_b).concat(player_functions).concat("<table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>");
         var picture_html = pic_dir.concat(pic_file);
-        var stem_html = "<table align='center'><tr><td><img src='".concat(picture_html).concat("'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls autoplay id='answer_audio' align='center'><source src='").concat(audio_dir).concat(bareStem_file).concat("' type='audio/wav'></audio></td></tr></table>");
+        var stem_html = stem_silence.concat("<table align='center'><tr><td><img src='").concat(picture_html).concat("'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls id='stem_player' align='center'><source src='").concat(audio_dir).concat(bareStem_file).concat("' type='audio/wav'></audio></td></tr></table>").concat(player_function_stem);
     
         //Figure out meaning (for arrow placement):
         var this_suff = stem_num.charAt(stem_num.search(/(P|D|K|B|F)_/i));
@@ -249,7 +279,7 @@ for (var block_num = 0; block_num < 4; block_num++){
         //Build the two pages that have audio in them:
         var choices_html = silence_one.concat(silence_two).concat(audio_a).concat(audio_b).concat(player_functions).concat("<table align='center'><tr><td align='center'><div align='center'><i>Which of these is the <b>most</b> correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>");
         var picture_html = pic_dir.concat(pic_file);
-        var stem_html = "<table align='center'><tr><td><img src='".concat(picture_html).concat("'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls autoplay id='answer_audio' align='center'><source src='").concat(audio_dir).concat(bareStem_file).concat("' type='audio/wav'></audio></td></tr></table>");
+        var stem_html = stem_silence.concat("<table align='center'><tr><td><img src='").concat(picture_html).concat("'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls id='stem_player' align='center'><source src='").concat(audio_dir).concat(bareStem_file).concat("' type='audio/wav'></audio></td></tr></table>").concat(player_function_stem);
     
         //Figure out meaning (for arrow placement):
         var this_suff = stem_num.charAt(stem_num.search(/(P|D|K|B|F)_/i));
@@ -296,22 +326,22 @@ var items = [
 
 //Practice Questions
         
-//Q1: can[s] vs. can[z]
-var pq1_a = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/bin[s].wav' type='audio/wav'></audio>";
-var pq1_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/bin[z].wav' type='audio/wav'></audio>";                   
+//Q1: ball[s] vs. ball[z]
+var pq1_a = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/ball[s].wav' type='audio/wav'></audio>";
+var pq1_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/ball[z].wav' type='audio/wav'></audio>";                   
         
 var pq1_choices_html = silence_one.concat(silence_two).concat(pq1_a).concat(pq1_b).concat(player_functions).concat("<table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>");
-var pq1_stem_html = "<table align='center'><tr><td><img src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/bin.png'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls autoplay id='answer_audio' align='center'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/bin.wav' type='audio/wav'></audio></td></tr></table>";
-          
+var pq1_stem_html = stem_silence.concat("<table align='center'><tr><td><img src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/ball.png'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls id='stem_player' align='center'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/ball.wav' type='audio/wav'></audio></td></tr></table>").concat(player_function_stem);
+        
 items.push(["pq_stem_1", "my_Separator", {normalMessage:pq1_stem_html, errorMessage:"", transfer:2500}]);
-items.push(["pq_choice_1", "ComicCaption", {s:"", q:pq1_choices_html, html:"http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/bin.png", mean:"Practice", hasCorrect:"B", as:["A", "B"]}]);
+items.push(["pq_choice_1", "ComicCaption", {s:"", q:pq1_choices_html, html:"http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/ball.png", mean:"Practice", hasCorrect:"B", as:["A", "B"]}]);
 
 //Q2: kisses vs. kishes
 var pq2_a = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kisses.wav' type='audio/wav'></audio>";        
 var pq2_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kishes.wav' type='audio/wav'></audio>";                   
         
 var pq2_choices_html = silence_one.concat(silence_two).concat(pq2_a).concat(pq2_b).concat(player_functions).concat("<table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>");
-var pq2_stem_html = "<table align='center'><tr><td><img src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.png'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls autoplay id='answer_audio' align='center'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.wav' type='audio/wav'></audio></td></tr></table>";
+var pq2_stem_html = stem_silence.concat("<table align='center'><tr><td><img src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.png'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls id='stem_player' align='center'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.wav' type='audio/wav'></audio></td></tr></table>").concat(player_function_stem);
           
 items.push(["pq_stem_2", "my_Separator", {normalMessage:pq2_stem_html, errorMessage:"", transfer:2500}]);
 items.push(["pq_choice_2", "ComicCaption", {s:"", q:pq2_choices_html, html:"http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.png", mean:"Practice", hasCorrect:"A", as:["A", "B"]}]);
@@ -321,8 +351,8 @@ var pq3_a = "<audio style='visibility:hidden;' id='a_player' controls onended='a
 var pq3_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/lea[fs].wav' type='audio/wav'></audio>";                   
         
 var pq3_choices_html = silence_one.concat(silence_two).concat(pq3_a).concat(pq3_b).concat(player_functions).concat("<table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>");
-var pq3_stem_html = "<table align='center'><tr><td><img src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/leaf.png'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls autoplay id='answer_audio' align='center'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/leaf.wav' type='audio/wav'></audio></td></tr></table>";
-          
+var pq3_stem_html = stem_silence.concat("<table align='center'><tr><td><img src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/leaf.png'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls id='stem_player' align='center'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/leaf.wav' type='audio/wav'></audio></td></tr></table>").concat(player_function_stem);
+         
 items.push(["pq_stem_3", "my_Separator", {normalMessage:pq3_stem_html, errorMessage:"", transfer:2500}]);
 items.push(["pq_choice_3", "ComicCaption", {s:"", q:pq3_choices_html, html:"http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/leaf.png", mean:"Practice", hasCorrect:"A", as:["A", "B"]}]);
   
@@ -331,7 +361,7 @@ var pq4_a = "<audio style='visibility:hidden;' id='a_player' controls onended='a
 var pq4_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kisses.wav' type='audio/wav'></audio>";                   
         
 var pq4_choices_html = silence_one.concat(silence_two).concat(pq4_a).concat(pq4_b).concat(player_functions).concat("<table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>");
-var pq4_stem_html = "<table align='center'><tr><td><img src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.png'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls autoplay id='answer_audio' align='center'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.wav' type='audio/wav'></audio></td></tr></table>";
+var pq4_stem_html = stem_silence.concat("<table align='center'><tr><td><img src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.png'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls id='stem_player' align='center'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.wav' type='audio/wav'></audio></td></tr></table>").concat(player_function_stem);
           
 items.push(["pq_stem_4", "my_Separator", {normalMessage:pq4_stem_html, errorMessage:"", transfer:2500}]);
 items.push(["pq_choice_4", "ComicCaption", {s:"", q:pq4_choices_html, html:"http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/kiss.png", mean:"Practice", hasCorrect:"B", as:["A", "B"]}]);
@@ -341,8 +371,8 @@ var pq5_a = "<audio style='visibility:hidden;' id='a_player' controls onended='a
 var pq5_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/roo[fs].wav' type='audio/wav'></audio>";                   
         
 var pq5_choices_html = silence_one.concat(silence_two).concat(pq5_a).concat(pq5_b).concat(player_functions).concat("<table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct word for that picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>");
-var pq5_stem_html = "<table align='center'><tr><td><img src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/roof.png'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls autoplay id='answer_audio' align='center'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/roof.wav' type='audio/wav'></audio></td></tr></table>";
-          
+var pq5_stem_html = stem_silence.concat("<table align='center'><tr><td><img src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/roof.png'></td></tr></table><p align='center'>The word for this image is:</p><table align='center' style='border-style:solid;border-color:green;'><tr><td><audio controls id='stem_player' align='center'><source src='http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/roof.wav' type='audio/wav'></audio></td></tr></table>").concat(player_function_stem);
+         
 items.push(["pq_stem_5", "my_Separator", {normalMessage:pq5_stem_html, errorMessage:"", transfer:2500}]);
 items.push(["pq_choice_5", "ComicCaption", {s:"", q:pq5_choices_html, html:"http://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/roof.png", mean:"Practice", hasCorrect:"A", as:["A", "B"]}]);
 
@@ -407,7 +437,7 @@ items = items.concat([
                                   '<textarea rows="4" cols="50" name="aha_description"></textarea><br><br>'+
                               "</div>"+
                               "<h2>Now please enter your Prolific ID:</h2>"+
-                              "<div><textarea rows='1' cols='50' name='prolific_id'></textarea><br><br></div>"
+                              "<div><textarea rows='1' cols='50' name='prolific_id' class='obligatory'></textarea><br><br></div>"
                    }
                ],
                [
