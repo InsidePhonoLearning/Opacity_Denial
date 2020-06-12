@@ -61,18 +61,19 @@ for (i = 0; i < pic_names.length; i ++){
 
 //General data to keep track of:    
 var audio_dir = "https://people.umass.edu/bprickett/Opacity_Denial/Stem Heads=".concat(head).concat("_Language=").concat(lang).concat("_Suffixes=").concat(suff).concat("_Subj").concat(subj).concat("/");
-var c2tt2suffs = {
+if (lang == "F" || lang == "CF"){
+    var c2tt2suffs = {
     
                      "1": {
                                "Train": {
-                                              "FaithNoHarm": ["B", "F"],
+                                              "FaithNoHarm": ["D", "P", "B", "F"],
                                               "FaithNoPal": ["B", "F"],
                                               "Harm": ["D", "P", "B", "F"],
                                               "Inter": ["B", "F"],
                                               "Pal": ["D", "P"]
                                          },
                                "Test":  {
-                                              "FaithNoHarm": ["B", "F"],
+                                              "FaithNoHarm": ["D", "P", "B", "F"],
                                               "FaithNoPal": ["B", "F"],
                                               "Pal": ["D", "P"],
                                               "Harm_old": ["D", "P", "B", "F"],
@@ -85,14 +86,14 @@ var c2tt2suffs = {
     
                      "2": {
                                "Train": {
-                                              "FaithNoHarm": ["D", "P"],
+                                              "FaithNoHarm": ["F", "K", "D", "P"],
                                               "FaithNoPal": ["D", "P"],
                                               "Harm": ["F", "K", "D", "P"],
                                               "Inter": ["D", "P"],
                                               "Pal": ["F", "K"]
                                          },
                                "Test":  {
-                                              "FaithNoHarm": ["D", "P"],
+                                              "FaithNoHarm": ["F", "K", "D", "P"],
                                               "FaithNoPal": ["D", "P"],
                                               "Pal": ["F", "K"],
                                               "Harm_old": ["F", "K", "D", "P"],
@@ -103,6 +104,51 @@ var c2tt2suffs = {
                                          }
                            } 
                 };
+   };
+if (lang == "B" || lang == "CB"){
+    var c2tt2suffs = {
+    
+                     "1": {
+                               "Train": {
+                                              "FaithNoHarm": ["D", "P", "B", "F"],
+                                              "FaithNoPal": ["B", "F"],
+                                              "Harm": ["D", "P", "B", "F"],
+                                              "Inter": ["D", "P"],
+                                              "Pal": ["D", "P"]
+                                         },
+                               "Test":  {
+                                              "FaithNoHarm": ["D", "P", "B", "F"],
+                                              "FaithNoPal": ["B", "F"],
+                                              "Pal": ["D", "P"],
+                                              "Harm_old": ["D", "P", "B", "F"],
+                                              "Harm_newAff": ["K"],
+                                              "Inter_old": ["D", "P"],
+                                              "Inter_newAff": ["K"],
+                                              "Inter_newType": ["B", "F"],
+                                         }
+                           },  
+    
+                     "2": {
+                               "Train": {
+                                              "FaithNoHarm": ["F", "K", "D", "P"],
+                                              "FaithNoPal": ["D", "P"],
+                                              "Harm": ["F", "K", "D", "P"],
+                                              "Inter": ["F", "K"],
+                                              "Pal": ["F", "K"]
+                                         },
+                               "Test":  {
+                                              "FaithNoHarm": ["F", "K", "D", "P"],
+                                              "FaithNoPal": ["D", "P"],
+                                              "Pal": ["F", "K"],
+                                              "Harm_old": ["F", "K", "D", "P"],
+                                              "Harm_newAff": ["B"],
+                                              "Inter_old": ["F", "K"],
+                                              "Inter_newAff": ["B"],
+                                              "Inter_newType": ["D", "P"],
+                                         }
+                           } 
+                };
+   };
 
 var trialInfo2Stem = {
                           "Train": {
