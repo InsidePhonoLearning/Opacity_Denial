@@ -7,8 +7,8 @@
 //***************************************
 
 //Conditions:
-var head = "I";
 var lang = "F";
+var head = "I";
 var suff = "1";
 var subj = "1";
 
