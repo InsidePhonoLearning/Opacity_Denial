@@ -503,7 +503,7 @@ items = items.concat([
                    "Message", 
                    {
                        transfer: "keypress",
-                       html: "<div><p>All done! To receive compensation, click NEED A LINK.</p></div>"
+                       html: "<div><p>All done! To receive compensation, click <a href='https://app.prolific.co/submissions/complete?cc=542E1FD6'>here</a>.</p></div>"
                    }
                ]
           ]);
