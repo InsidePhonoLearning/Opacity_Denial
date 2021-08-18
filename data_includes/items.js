@@ -11,8 +11,8 @@ var lang = "F";
 var suff = "1";
 
 //Other params:
-var train_block_num = 7; //Should be 7 in real exp.
-var test_block_num = 4; //Should be 4 in real exp.
+var train_block_num = 1; //Should be 7 in real exp.
+var test_block_num = 1; //Should be 4 in real exp.
 var test_run = false; //Should be false in real exp.
     
 //Functions
@@ -26,7 +26,7 @@ function shuffle(array) {
      
 //List of images
 var pic_names = [];
-var jpgs = ["2.jpg", "4.jpg", "23.jpg", "24.jpg", "6.jpg", "9.jpg", "10.jpg", "18.jpg", "20.jpg", "25.jpg", "26.jpg", "27.jpg", "28.jpg", "31.jpg", "32.jpg", "33.jpg", "34.jpg", "35.jpg", "36.jpg", "37.jpg", "39.jpg", "41.jpg", "42.jpg", "45.jpg", "48.jpg", "49.jpg", "50.jpg", "52.jpg", "55.jpg", "59.jpg", "62.jpg", "65.jpg", "72.jpg", "73.jpg", "76.jpg", "79.jpg", "81.jpg", "84.jpg", "86.jpg", "87.jpg", "88.jpg", "90.jpg", "92.jpg", "93.jpg", "94.jpg", "97.jpg", "107.jpg", "109.jpg", "121.jpg", "125.jpg", "127.jpg", "130.jpg", "132.jpg", "134.jpg", "135.jpg", "137.jpg", "138.jpg", "139.jpg", "140.jpg", "142.jpg", "143.jpg", "145.jpg", "148.jpg", "149.jpg", "154.jpg", "160.jpg", "161.jpg", "166.jpg", "168.jpg", "173.jpg", "174.jpg", "178.jpg", "183.jpg", "185.jpg", "187.jpg", "189.jpg", "190.jpg", "191.jpg", "192.jpg", "193.jpg", "196.jpg", "197.jpg", "198.jpg", "199.jpg"];
+var jpgs = ["2.jpg", "4.jpg", "23.jpg", "24.jpg", "6.jpg", "9.jpg", "10.jpg", "18.jpg", "20.jpg", "25.jpg", "26.jpg", "27.jpg", "28.jpg", "31.jpg", "32.jpg", "33.jpg", "34.jpg", "35.jpg", "36.jpg", "37.jpg", "39.jpg", "41.jpg", "42.jpg", "45.jpg", "48.jpg", "49.jpg", "50.jpg", "52.jpg", "55.jpg", "59.jpg", "62.jpg", "65.jpg", "72.jpg", "73.jpg", "76.jpg", "79.jpg", "81.jpg", "84.jpg", "86.jpg", "87.jpg", "88.jpg", "90.jpg", "92.jpg", "93.jpg", "94.jpg", "97.jpg", "107.jpg", "109.jpg", "121.jpg", "125.jpg", "127.jpg", "130.jpg", "132.jpg", "134.jpg", "135.jpg", "137.jpg", "138.jpg", "139.jpg", "140.jpg", "142.jpg", "143.jpg", "145.jpg", "148.jpg", "149.jpg", "154.jpg", "160.jpg", "161.jpg", "166.jpg", "168.jpg", "173.jpg", "174.jpg", "178.jpg", "183.jpg", "185.jpg", "187.jpg", "189.jpg", "190.jpg", "191.jpg", "192.jpg", "193.jpg", "196.jpg", "197.jpg", "198.jpg", "199.jpg"]; 
 var pic_dir = "https://people.umass.edu/bprickett/Opacity_Denial/Visual/";
 for (i = 1; i <= 200; i ++){
     this_pic = i+".jpg";
@@ -34,7 +34,7 @@ for (i = 1; i <= 200; i ++){
         pic_names.push(this_pic);
     }
     else{
-        pic_names.push(i+".png");
+        pic_names.push(i+".png"); 
     }
 }
 
@@ -52,17 +52,17 @@ IMAGES_TO_PRELOAD.push("https://people.umass.edu/bprickett/Opacity_Denial/Practi
 IMAGES_TO_PRELOAD.push("https://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/human_face_confused.png");
 IMAGES_TO_PRELOAD.push("https://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/human_face_neutral.png");
 var ur_pics = [
-        "asparagus.png", "atom.png", "bean_bag.png",
+        "asparagus.png", "atom.png", "bean_bag.png", 
         "cape.png", "eiffel_tower.png", "fanny_pack.jpg", "football.png",
         "goat.jpg", "hoe.jpg", "hospital.png", "kimono.png", "llama.png",
-        "rope.jpg",
-        //"sailboat.png", "slide.png", "volcano.jpg","bonzai_tree.png",
+        "rope.jpg", 
+        //"sailboat.png", "slide.png", "volcano.jpg","bonzai_tree.png", 
         "squirrel.jpg", "surfboard.png",
          "wine_bottle.png"
       ];
 for (var p = 0; p < ur_pics.length; p++){
     p_name = ur_pics[p];
-    //IMAGES_TO_PRELOAD.push("https://people.umass.edu/bprickett/Opacity_Denial/Suffix_UR_Phase/".concat(p_name));
+    //IMAGES_TO_PRELOAD.push("https://people.umass.edu/bprickett/Opacity_Denial/Suffix_UR_Phase/".concat(p_name)); 
 }
 
 
@@ -109,8 +109,8 @@ function get_URLearning(time, suff_list) {
                                  +"<p>You'll still have your alien friend (pictured below) telling you whether you're right or wrong after you make each choice.</p>"
                                  +"<img src='https://people.umass.edu/bprickett/Opacity_Denial/alien_face_happy.png'>"
                       }
-        ]);
-        ur_names.push("URIntro_"+time);
+        ]); 
+        ur_names.push("URIntro_"+time); 
   
     }
     
@@ -129,10 +129,10 @@ function get_URLearning(time, suff_list) {
             }
         }    
     }
+    shuffle(answer_options); 
     shuffle(answer_options);
-    shuffle(answer_options);
-    shuffle(answer_options);
-    shuffle(answer_options);
+    shuffle(answer_options); 
+    shuffle(answer_options); 
     shuffle(answer_options);
     shuffle(answer_options);            
     for (rep_j = 0; rep_j < reps; rep_j ++){
@@ -159,13 +159,13 @@ function get_URLearning(time, suff_list) {
            var correct_word =  word_options[this_option];
     
            if (correct_word == "A"){
-               var urHTML_a = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='".concat(correct_filename).concat("' type='audio/wav'></audio>");
-               var urHTML_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='".concat(wrong_filename).concat("' type='audio/wav'></audio>");
+               var urHTML_a = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='".concat(correct_filename).concat("' type='audio/wav'></audio>"); 
+               var urHTML_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='".concat(wrong_filename).concat("' type='audio/wav'></audio>"); 
            }
            else {
-               var urHTML_a = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='".concat(wrong_filename).concat("' type='audio/wav'></audio>");
+               var urHTML_a = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='".concat(wrong_filename).concat("' type='audio/wav'></audio>"); 
                var urHTML_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='".concat(correct_filename).concat("' type='audio/wav'></audio>");
-           }
+           } 
    
            var ur_choices_html = silence_one.concat(silence_two).concat(urHTML_a).concat(urHTML_b).concat(player_functions).concat("<table align='center'><tr><td align='center'><div align='center'><i>Which of these is the correct description of the picture above?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>");
      
@@ -199,7 +199,7 @@ function get_URLearning(time, suff_list) {
                +"<p>Great work! Now that you've practiced the suffix meanings some more, it's time to continue.</p>"}
                ]);
               ur_names.push("UROutro_"+time);
-      }
+      } 
 
     return [ur_names, ur_trials];
 }
@@ -327,7 +327,7 @@ var all_audio = "<audio style='visibility:hidden;' controls preload='auto'><sour
 var train_bareStems = [];
 var train_choices = [];
 var break_pages = [];
-var train_names = [];
+var train_names = []; 
 var i = 0;
 var stem_num_tracker = {"Train":{"FaithNoHarm":{}, "FaithNoPal":{}, "Harm":{}, "Pal":{}, "Inter":{}}, "Test":{"Harm_newAff":{}, "Inter_newAff":{}, "Inter_newType":{}}};
 for (phase in stem_num_tracker){
@@ -360,12 +360,12 @@ for (var block_num = 0; block_num < train_block_num; block_num++){
                 current_option = 0
              }
      }    
+    shuffle(answer_options); 
+    shuffle(answer_options); 
+    shuffle(answer_options); 
     shuffle(answer_options);
     shuffle(answer_options);
-    shuffle(answer_options);
-    shuffle(answer_options);
-    shuffle(answer_options);
-    shuffle(answer_options);
+    shuffle(answer_options); 
     for (var trial = 0; trial < block_template.length; trial ++){
         //Set up the beginning of the block:
         var this_tt = block_template[trial];
@@ -388,7 +388,7 @@ for (var block_num = 0; block_num < train_block_num; block_num++){
         incorrect_file = "Train_".concat(this_tt).concat("_IncorrectChoice_").concat(stem_num).concat("_").concat(this_suff).concat(".wav");
         
         //Randomize which side the correct word happens on:
-        var word_options = ["A", "B"];
+        var word_options = ["A", "B"]; 
         var this_option = answer_options.pop();
         var correct_word =  word_options[this_option];
         
@@ -434,7 +434,7 @@ for (var block_num = 0; block_num < train_block_num; block_num++){
     train_names.push("train_bp_"+bNum);
     
     //Make a UR-training block:
-    var [ur_names, ur_items] = get_URLearning("train"+bNum, all_suffs);
+    var [ur_names, ur_items] = get_URLearning("train"+bNum, all_suffs); 
     train_names = train_names.concat(ur_names);
     train_choices = train_choices.concat(ur_items);
             
@@ -485,7 +485,7 @@ for (var block_num = 0; block_num < test_block_num; block_num++){
         }
         
         //Randomize which side the correct word happens on:
-        var word_options = ["A", "B"];
+        var word_options = ["A", "B"]; 
         shuffle(word_options);
         var correct_word =  word_options[0];
         
@@ -553,10 +553,10 @@ consent = "<input type='checkbox' id='consent' name='consent' class='obligatory'
       
 //Start material:
 var items = [
-               ["preload_img", "Preloader", {images: IMAGES_TO_PRELOAD}],
+               ["preload_img", "Preloader", {images: IMAGES_TO_PRELOAD}], 
                [
-                   "intro",
-                   "Form",
+                   "intro", 
+                   "Form", 
                    {
                        html: instruct.concat(headphones).concat(contact).concat(browser).concat(consent),
                        consentRequired: true,
@@ -594,13 +594,13 @@ items.push([
                           +" Each trial will present you with an arrow, which will be pointing either <u>above</u>, <u>below</u>, <u>in front of</u>, <u>to the right of</u>, or <u>to the left of</u> something."
                           +"<p style='font-weight:bold;'>Your job is to learn how to describe the location of the arrow in the alien language.</p>"
                     }
-            ]);
+            ]); 
  items.push(["compQ2", "Question", {q:"Where will the arrow never point to?", hasCorrect:"Behind", as:["Behind", "Above"]}]);
  
  items.push([
-                   "Instr2",
-                   "Message",
-                   {html:
+                   "Instr2", 
+                   "Message", 
+                   {html: 
                           "<h1>How you'll learn... (Continued)</h1>"
                           +"<p>To give directions, you'll be clicking on one of two randomly ordered choices: "
                           +"one will be an audio clip that gives correct directions and one will be a clip that gives incorrect ones.</p>"
@@ -692,9 +692,9 @@ items.push(["compQ3", "Question", {q:"What suffix in English is usually added to
     
 //Linguistics lesson pages:
 items.push([
-                   "Instr4",
-                   "Message",
-                   {html:
+                   "Instr4", 
+                   "Message", 
+                   {html: 
                          "<h1>Learning Correct Suffix Pronunciations</h1>"+
                          "<p>In many languages, how a suffix is pronounced depends on the word it attaches to. "+
                          "For example, the English plural suffix, '-s', is pronounced differently in different words:</p>"+
@@ -705,9 +705,9 @@ items.push([
 items.push(["compQ4", "Question", {q:"What kind of sound does the plural suffix make in 'dogs'?", hasCorrect:"A 'z' sound", as:["An 's' sound", "A 'z' sound"]}]);
    
 items.push([
-                   "Instr5",
-                   "Message",
-                   {html:
+                   "Instr5", 
+                   "Message", 
+                   {html: 
                          "<h1>Learning Correct Word Pronunciations</h1>"+
                          "<p>Words can sometimes also undergo changes in pronunciation when suffixes are attached to them. "+
                          "For example, in English, to make the plural form of 'life', an 'f' sound changes into a 'v'. Other words do this too:</p>"+
@@ -721,7 +721,7 @@ items.push(["compQ5", "Question", {q:"Which noun changes its 'f' to a 'v' when a
         
 //English Practice Questions
 //Add practice intro to items list:      
-items.push(["Instr6", "Message",
+items.push(["Instr6", "Message", 
                    {
                        html: "<h1>Pronunciation Practice</h1><div>"
                              +"<p>Soon you'll start learning how to correctly pronounce words with suffixes in the alien language. But before you do that, "
@@ -785,7 +785,7 @@ items.push(["pq_choice_5", "ComicCaption", {s:"", q:pq5_choices_html, html:"http
 
         
 //Add practice ending to the items list:        
-items.push(["practice_end", "Message",
+items.push(["practice_end", "Message", 
                    {
                        html: "<h1>Learning Alien Pronunciations</h1>"
                              +"<p>Nice work! You're now ready to start learning how to pronounce words with suffixes in the alien language."
@@ -814,8 +814,8 @@ items = items.concat(test_choices);
 //Ending material:
 items = items.concat([    
                [
-                   "survey",
-                   "Form",
+                   "survey", 
+                   "Form", 
                    {
                        consentRequired: false,
                        html:"<h2>Please answer the following questions about yourself:</h2><p><i>None of your answers here will impact your compensation and you can skip anything you feel uncomfortable providing us with.</i></p>"+
@@ -843,7 +843,7 @@ items = items.concat([
                                 "<br><b>3) How did you approach the test trials? Please choose all that apply:</b><br>"+
                                   '<input type="checkbox" name="test_approach" value="similarity"> Chose words that sounded <i>similar</i> to the words from other trials.<br>'+
                                   '<input type="checkbox" name="test_approach" value="difference"> Chose words that sounded <i>different</i> to the words from other trials.<br>'+
-                                  '<input type="checkbox" name="test_approach" value="rule_pattern"> Chose words that fit a rule or pattern.<br>'+
+                                  '<input type="checkbox" name="test_approach" value="rule_pattern"> Chose words that fit a rule or pattern.<br>'+ 
                                 "<br><b>4) Again, please describe what you did in as much detail as you can. If you used a rule, what was it?</b><br><br>"+
                                   '<textarea rows="4" cols="50" name="test_description"></textarea><br><br>'+
                                 "<br><b>5) What percent of test trials do you think you got right?</b><br><br>"+
@@ -861,8 +861,8 @@ items = items.concat([
                    }
                ],
                [
-                   "phaseSeperator",
-                   "Message",
+                   "phaseSeperator", 
+                   "Message", 
                    {
                        html: "<h1>Test Phase</h1>"+
                              "<p>Now you will begin the Test Phase. The trials will be similar to the ones in training, however you will no longer receive any feedback when being tested on words' pronunciation.</p>"+
@@ -871,8 +871,8 @@ items = items.concat([
                ],
                ["sr", "__SendResults__", { }],
                [
-                   "end",
-                   "Message",
+                   "end", 
+                   "Message", 
                    {
                        transfer: 15000,
                        html: "<div><p>All done! To receive compensation, click <a href='https://app.prolific.co/submissions/complete?cc=542E1FD6'>here</a>.</p></div>"
@@ -900,7 +900,7 @@ var all_trials = [
                     "suffUR_stem_4", "suffUR_choice_4","human_feedback",
                     "suffUR_stem_5", "suffUR_choice_5","human_feedback"
                     
-                  ];
+                  ]; 
 
  all_trials = all_trials.concat(ur_names);
     
@@ -947,4 +947,5 @@ var defaults = [
         saveReactionTime: true
     }
 ];
+
 
