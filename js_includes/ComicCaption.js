@@ -40,6 +40,7 @@ jqueryWidget: {
         if (meaning == "Practice"){
             fullhtml1 = "<table align='center'><tr><td></td><td></td><td></td></tr><tr><td></td>".concat(partial_html1).concat("<td></td>").concat(partial_html1).concat("<tr><td></td><td></td><td></td></tr></table>"); 
         }
+        fullhtml1 = "<table align='center'><tr><td><h1>=</h1></td><td>"+fullhtml1+"</td></tr></table>";
         //console.log(fullhtml); //Make sure url is correct
         var opts = {
             options:     this.options,
