@@ -26,7 +26,7 @@ function shuffle(array) {
      
 //List of images for stems:
 var pic_names = [];
-var jpgs = ["2.jpg", "4.jpg", "23.jpg", "24.jpg", "6.jpg", "9.jpg", "10.jpg", "18.jpg", "20.jpg", "25.jpg", "26.jpg", "27.jpg", "28.jpg", "32.jpg", "33.jpg", "34.jpg", "35.jpg", "36.jpg", "37.jpg", "39.jpg", "41.jpg", "42.jpg", "45.jpg", "48.jpg", "49.jpg", "50.jpg", "52.jpg", "55.jpg", "59.jpg", "62.jpg", "65.jpg", "72.jpg", "73.jpg", "76.jpg", "79.jpg", "81.jpg", "84.jpg", "86.jpg", "87.jpg", "88.jpg", "90.jpg", "92.jpg", "93.jpg", "94.jpg", "97.jpg", "107.jpg", "109.jpg", "121.jpg", "125.jpg", "127.jpg", "130.jpg", "132.jpg", "134.jpg", "135.jpg", "137.jpg", "138.jpg", "139.jpg", "140.jpg", "142.jpg", "143.jpg", "145.jpg", "148.jpg", "149.jpg", "154.jpg", "160.jpg", "161.jpg", "166.jpg", "168.jpg", "173.jpg", "174.jpg", "178.jpg", "183.jpg", "185.jpg", "187.jpg", "189.jpg", "190.jpg", "191.jpg", "192.jpg", "196.jpg", "197.jpg", "198.jpg", "199.jpg"]; 
+var jpgs = ["2.jpg", "4.jpg", "23.jpg", "24.jpg", "6.jpg", "9.jpg", "10.jpg", "18.jpg", "20.jpg", "25.jpg", "26.jpg", "27.jpg", "28.jpg", "32.jpg", "33.jpg", "34.jpg", "35.jpg", "36.jpg", "37.jpg", "39.jpg", "41.jpg", "42.jpg", "45.jpg", "48.jpg", "49.jpg", "50.jpg", "52.jpg", "55.jpg", "59.jpg", "62.jpg", "65.jpg", "72.jpg", "73.jpg", "76.jpg", "79.jpg", "81.jpg", "84.jpg", "86.jpg", "87.jpg", "88.jpg", "90.jpg", "92.jpg", "93.jpg", "94.jpg", "97.jpg", "107.jpg", "109.jpg", "121.jpg", "125.jpg", "127.jpg", "130.jpg", "132.jpg", "134.jpg", "135.jpg", "137.jpg", "138.jpg", "139.jpg", "140.jpg", "142.jpg", "143.jpg", "145.jpg", "148.jpg", "149.jpg", "154.jpg", "160.jpg", "161.jpg", "166.jpg", "168.jpg", "173.jpg", "174.jpg", "178.jpg", "183.jpg", "185.jpg", "187.jpg", "189.jpg", "190.jpg", "191.jpg", "192.jpg", "196.jpg", "197.jpg", "198.jpg", "199.jpg", "221.jpg", "224.jpg", "229.jpg", "232.jpg", "234.jpg", "237.jpg", "238.jpg"]; 
 var pic_dir = "https://people.umass.edu/bprickett/Opacity_Denial/Visual/";
 for (i = 1; i <= 200; i ++){
     this_pic = i+".jpg";
@@ -192,11 +192,11 @@ var player_function_5 = "function audioStartSR() {c = document.getElementById('s
 var player_function_6 = "function audioEndSR() {c = document.getElementById('sr_image');c.style.borderStyle = 'none'; c.style.padding = '50px';}</script>";
 var player_functions = player_function_1.concat(player_function_2).concat(player_function_3).concat(player_function_4).concat(player_function_5).concat(player_function_6);
 
-var stem_silence = "<audio style='visibility:hidden;' id='sil_stem' controls autoplay onended='audioStartStem()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio>";
-var silence_one = "<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio>";
-var silence_two = "<audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio>";
+var stem_silence = "<audio style='visibility:hidden;' id='sil_stem' controls autoplay onended='audioStartStem()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/shorter_silence.wav'></audio>";
+var silence_one = "<audio style='visibility:hidden;' id='sil_1' controls autoplay onended='audioEndPreA()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/shorter_silence.wav'></audio>";
+var silence_two = "<audio style='visibility:hidden;' id='sil_2' controls onended='audioEndPreB()'><source src='https://people.umass.edu/bprickett/Opacity_Denial/shorter_silence.wav'></audio>";
  
-var all_audio = "<audio style='visibility:hidden;' controls preload='auto'><source src='https://people.umass.edu/bprickett/Opacity_Denial/silence.wav'></audio>";
+var all_audio = "<audio style='visibility:hidden;' controls preload='auto'><source src='https://people.umass.edu/bprickett/Opacity_Denial/shorter_silence.wav'></audio>";
 
 //Add the suffix ur files to the "all_audio" string for preloading:
 all_suffix_files = ['1_eft_right.wav', '1_eft_wrong.wav', '1_esk_withheld.wav', '1_isk_withheld.wav', '1_iv_right.wav', '1_iv_wrong.wav', '1_ob_right.wav', '1_ob_wrong.wav', '1_osk_withheld.wav', '1_usk_withheld.wav', '1_uZ_right.wav', '1_uZ_wrong.wav', '2_eb_right.wav', '2_eb_wrong.wav', '2_iv_withheld.wav', '2_iZ_right.wav', '2_iZ_wrong.wav', '2_oft_right.wav', '2_oft_wrong.wav', '2_usk_right.wav', '2_usk_wrong.wav', '2_uv_withheld.wav'];
@@ -221,10 +221,16 @@ for (phase in stem_num_tracker){
         }
     }
 
+//Block for each suffix:
+var suff2block = {"ft":["Pal","Pal","Pal","Pal","Pal","Pal","FaithNoHarm", "Harm","FaithNoHarm", "Harm","FaithNoHarm", "Harm"],
+                  "b": ["FaithNoPal", "FaithNoPal", "FaithNoPal", "FaithNoPal", "FaithNoPal", "FaithNoPal", "FaithNoHarm", "Harm","FaithNoHarm", "Harm","FaithNoHarm", "Harm", "Inter", "Inter", "Inter", "Inter", "Inter", "Inter"]};
+block_suffs = ["ft", "b"];
+shuffle(block_suffs);
+
 //Put everything together to create the pieces of the training phase:
 for (var block_num = 0; block_num < train_block_num; block_num++){
-    
-    var block_template = ["FaithNoHarm", "FaithNoPal", "Harm", "Pal", "Inter","FaithNoHarm", "FaithNoPal", "Harm", "Pal", "Inter","FaithNoHarm", "FaithNoPal", "Harm", "Pal", "Inter","FaithNoHarm", "FaithNoPal", "Harm", "Pal", "Inter", "FaithNoHarm", "FaithNoPal", "Harm", "Pal", "Inter","FaithNoHarm", "FaithNoPal", "Harm", "Pal", "Inter"];
+    var this_suff = block_suffs[block_num % 2];
+    var block_template = suff2block[this_suff];
     shuffle(block_template);
     my_sd = get_suffDict(lang);
     for (var tt in my_sd[suff]["Train"]){
@@ -251,7 +257,7 @@ for (var block_num = 0; block_num < train_block_num; block_num++){
     for (var trial = 0; trial < block_template.length; trial ++){
         //Set up the beginning of the block:
         var this_tt = block_template[trial];
-        var this_suff = my_sd[suff]["Train"][this_tt].pop();
+        //var this_suff = my_sd[suff]["Train"][this_tt].pop();
         var this_meaning = suffix_to_meaning[this_suff];
 
         //Find the stem and corresponding picture for this trial:
@@ -465,7 +471,8 @@ for (n = 0; n < practice_nouns.length; n++){
     //Make the name of the audio file:
     bareStem_file = this_noun.concat(".wav");
     ur_file = audio_dir.concat("s.wav");
-    correct_file = sing2plur[this_noun].concat(".wav");   
+    correct_file = sing2plur[this_noun].concat(".wav"); 
+           
        
     //Set up the stimulus pairs:
     var audio_a = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='".concat(audio_dir).concat(bareStem_file).concat("' type='audio/wav'></audio>");
@@ -484,17 +491,89 @@ for (n = 0; n < practice_nouns.length; n++){
     practice_names.push("practice_ur_"+n);
     practice_items.push(["practice_sr_"+n, "Message", {html:srPage_html}]);
     practice_names.push("practice_sr_"+n);
+                
+    
               
 }
-            
+        
+var practice_test_items = [];
+var practice_test_names = [];
+var practice_test_nouns = ["leg", "submarine", "wolf", "cake"];   
+var practice_test_plurals = ["legs", "submarines", "wolves", "cakes"];
+var practice_test_decoys = ["leks", "submarinets", "wolfs", "cages"]; 
+var practice_test_indeces = [0, 1, 2, 3];
+shuffle(practice_test_indeces);    
+for (n = 0; n < practice_test_indeces.length; n++){
+    this_index = practice_test_indeces[n];
+    this_noun = practice_test_nouns[this_index];
+    this_right = practice_test_plurals[this_index];
+    this_wrong = practice_test_decoys[this_index];
+    var picture_html = "https://people.umass.edu/bprickett/Opacity_Denial/PracticeQuestions/".concat(this_noun).concat(".png");
+     
+    //Create the image for the SR:
+    var meaning2SRImage = get_m2i(picture_html);
+    var srImage = meaning2SRImage["plural"];
+                
+    //Create the image for the suffix UR:
+    var meaning2suffixUrImage = get_m2i("http://people.umass.edu/bprickett/Opacity_Denial/outlined_square.jpg");
+    var urImage = meaning2suffixUrImage["plural"];
+                
+    //Make the name of the audio file:
+    bareStem_file = this_noun.concat(".wav");
+    ur_file = audio_dir.concat("s.wav");
+    correct_file = this_right.concat(".wav");   
+    incorrect_file = this_wrong.concat(".wav"); 
+       
+    //Randomize which side the correct word happens on:
+    var word_options = ["A", "B"];
+    shuffle(word_options);
+    var correct_word =  word_options[0];
+    
+    //Create the image for the suffix UR:
+    var meaning2suffixUrImage = get_m2i("http://people.umass.edu/bprickett/Opacity_Denial/outlined_square.jpg");
+    var urImage = meaning2suffixUrImage["plural"];
+        
+    //Set up the stimulus pairs:
+    if (correct_word == "A"){
+            var audio_a = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='".concat(audio_dir).concat(correct_file).concat("' type='audio/wav'></audio>");
+            var audio_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='".concat(audio_dir).concat(incorrect_file).concat("' type='audio/wav'></audio>");          
+    }
+    else {
+            var audio_a = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='".concat(audio_dir).concat(incorrect_file).concat("' type='audio/wav'></audio>");
+            var audio_b = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='".concat(audio_dir).concat(correct_file).concat("' type='audio/wav'></audio>");  
+     }
+     var audio_stem = "<audio style='visibility:hidden;' id='a_player' controls onended='audioEndPostA()'><source src='".concat(audio_dir).concat(bareStem_file).concat("' type='audio/wav'></audio>");
+     var audio_suff = "<audio style='visibility:hidden;' id='b_player' controls onended='audioEndPostB()'><source src='".concat(ur_file).concat("' type='audio/wav'></audio>");          
+         
+
+     //Save these audio elements for preloading:
+     all_audio = all_audio.concat("<audio style='visibility:hidden;' controls preload='auto'><source src='").concat(audio_dir).concat(bareStem_file).concat("' type='audio/wav'></audio>");
+     all_audio = all_audio.concat("<audio style='visibility:hidden;' controls preload='auto'><source src='").concat(audio_dir).concat(correct_file).concat("' type='audio/wav'></audio>");
+     all_audio = all_audio.concat("<audio style='visibility:hidden;' controls preload='auto'><source src='").concat(audio_dir).concat(incorrect_file).concat("' type='audio/wav'></audio>");
+
+     //Build the two pages that have audio in them:
+     var choices_html = silence_one.concat(silence_two).concat(audio_a).concat(audio_b).concat(choice_functions).concat("<table align='center'><tr><td align='center'><div align='center'><i>Which of these is the <b>most</b> correct word for the above picture?</i></div></td></tr></table><table align='center'><tr><td><font color='white'>__</font><span id='option_A'>A</span></td><td><p style='visibility:hidden;'>__</p></td><td><font color='white'>__</font><span id='option_B'>B</div></td></tr></table>");
+     var urPage_html = player_functions.concat(silence_one).concat(silence_two).concat("<style>*.Message-continue-link {position: relative; left:200px;}</style><table align='center'><tr><td id='a_image'><img src='").concat(picture_html).concat("'></td><td><h1>+</h1></td><td id='b_image' style='padding:50px;'>").concat(urImage).concat("</td></tr><tr><td>").concat(audio_stem).concat("</td><td></td><td>").concat(audio_suff).concat("</td></tr></table>");
+           
+     //Set up the item objects:
+     practice_test_items.push(["ptest_stem_"+i, "Message", {html:urPage_html}]);
+     practice_test_names.push("ptest_stem_"+i);
+     practice_test_items.push(["ptest_choice_"+i, "ComicCaption", {s:"", q:choices_html, html:picture_html, mean:"Practice", hasCorrect:correct_word, as:["A", "B"]}]);
+     practice_test_names.push("ptest_choice_"+i);
+        
+     //test_names.push("sep");
+     i ++;
+              
+}
+        
 
 //**********************
 // BUILD ITEMS ARRAY
 //***********************
 
 //Pieces of the "intro" screen:
-instruct = "<style>*.Message-continue-link {position: relative; left:200px;}</style><div style='padding:50px;'><h1>Welcome!</h1><p>In this experiment, you will be asked to learn aspects of an imaginary ‘alien’ language. The experiment should take about an hour, but before we start, there are some important pieces of information that we need to go over first:</p><ul>";
-headphones = "<li>Please be sure to wear headphones while participating.</li><li>Do not take notes of any kind during the experiment.</li>";
+instruct = "<style>*.Message-continue-link {position: relative; left:200px;}</style><div style='padding:50px;'><h1>Welcome!</h1><p>In this experiment, you will be asked to learn aspects of an imaginary ‘alien’ language. The experiment should take about an hour, but there is some important information that we need to go over first:</p><ul>";
+headphones = "<li>Please wear headphones while participating.</li><li>Do not take notes of any kind during the experiment.</li>";
 contact = "<li>Feel free to contact the researcher at bprickett@umass.edu if you have any questions or concerns.</li>";
 browser = "<li>And <u>do not use Internet Explorer or Safari</u>, as the experiment software will not work with these browsers. <span style='font-weight: bold;color:red;'>If you are using these browsers, you will not be compensated.</span> Please use another browser, such as: Google Chrome, Microsoft Edge, Firefox, or Opera.</li></ul>";
 consent = "<input type='checkbox' id='consent' name='consent' class='obligatory'>I have read the <a href='http://people.umass.edu/bprickett/ConsentForm_OpDen.pdf' target='_blank'>consent form</a> and agree to participate in this experiment.</div>";
@@ -523,13 +602,14 @@ items.push([
                           +"<p>We will now walk through a few screens of instructions and practice trials. There will be some comprehension "
                           +"questions along the way to make sure you have understood the instructions. So please read carefully!</p>"
                           +"<p>After the instructions/practice the rest of the experiment will proceed as follows:<ul>"
-                          +"<li>A training phase, divided into "+train_block_num+" blocks.</li>"
-                          +"<li>A testing phase, divided into "+test_block_num+" blocks.</li>"
-                          +"<li>A short survey, with questions about your experience.</li>"
+                          +"<li>A Training phase, divided into "+train_block_num+" blocks.</li>"
+                          +"<li>A Testing phase, divided into "+test_block_num+" blocks.</li>"
+                          +"<li>A short survey, with questions about your experience.</li></ul>"
+                          +"<p>You can take short rest breaks between blocks if you need to.</p>"
                     }
             ]);
         
-items.push(["compQ1", "Question", {q:"Which of the following is <strong>not</strong> a phase in the experiment?", hasCorrect:"Forget Phase", as:["Training Phase", "Testing Phase", "Forget Phase"]}]);
+items.push(["compQ0", "Question", {q:"Which of the following is <strong>not</strong> a phase in the experiment?", hasCorrect:"Guessing Phase", as:["Training Phase", "Testing Phase", "Guessing Phase"]}]);
         
 items.push([
                    "Instr1",
@@ -539,30 +619,41 @@ items.push([
                           +"<p>Languages often add <i>suffixes</i> to the end of words to express some meaning. For example, in English we add ‘-s’ to the end of nouns to change a word from singular to plural:"
                           +"<ul><li>‘cat’ &rarr; ‘cats’'</li>"
                           +"<li>‘ball’ &rarr; ‘balls’</li>"
-                          +"<li>‘leaf’ &rarr; ‘leaves’</li></ul>"
-                          +"<p>Sometimes, the pronounciation of a suffix will change when it’s added to certain words (like in ‘balls’ above, where the ‘-s’ is pronounced more like a ‘z’)."
-                          +" Other times, words can change because of the suffix that’s added to them (like in ‘leaves’ where the ‘f’ becomes a ‘v’).</p>"
-                          +"<p><span style='font-weight:bold;'>In this experiment, you’ll be learning how to correctly add and pronounce suffixes/words in the alien language.</span> But first, we’re going to do some practice trials in English</p>"
+                          +"<li>‘lake’ &rarr; ‘lakes’</li></ul>"
                     }
             ]); 
+        
+ items.push(["compQ1", "Question", {q:"Which of the following is <strong>not</strong> true?", hasCorrect:"Suffixes are added to the beginning of a word", as:["English ‘-s’ is a suffix", "Suffixes are added to the beginning of a word", "English ‘-s’ expresses the plural"]}]);
+  
+items.push([
+                   "Instr2",
+                   "Message",
+                   {html:  
+                          "<h1>Instructions (Continued)</h1>"
+                          +"<p>Suffixes may sound different with some words. For example, in ‘cats’ the ‘-s’ is pronounced like an ‘s’ sound, but in ‘balls’ the ‘-s’ makes a ‘z’ sound."
+                          +" Other times, words change because of the suffix that’s added to them. For example, in ‘leaves’ the ‘f’ sound of ‘leaf’ becomes a ‘v’ sound.</p>"
+                          +"<p><span style='font-weight:bold;'>In this experiment, you’ll be learning how to pronounce words when different suffixes are added.</span> But first, we’re going to do some practice trials in English.</p>"
+                    }
+            ]);        
+        
  items.push(["compQ2", "Question", {q:"How is the ‘-s’ suffix pronounced in the word ‘balls’?", hasCorrect:"Like ‘z’", as:["Like ‘z’", "Like ‘v’", "Like ‘s’"]}]);
  
  items.push([
-                   "Instr2", 
+                   "Instr3", 
                    "Message", 
                    {html: 
                           "<h1>How you’ll learn...</h1>"
-                          +"<p>In each training trial, you’ll first be shown two images, separated by a ‘+’ symbol: the first will represent the meaning of a noun and the second will represent the meaning of a suffix. Don't worry about memorizing individual nouns.</p>"
+                          +"<p>In each training trial, you’ll be shown two images, separated by a ‘+’ symbol: the first will represent the meaning of a noun and the second will represent the meaning of a suffix.</p><p><strong>Don't worry about memorizing individual nouns&mdash;you will always be told how to pronounce the noun by itself.</strong></p>"
                           +"<p>You’ll also hear two audio files: the first will teach you the pronunciation of the noun (while a <span style='color:red;font-weight:bold;'>red</span> box appears around the noun’s picture) and then the second one will teach you the pronunciation of the suffix (while a <span style='color:red;font-weight:bold;'>red</span> box appears around that image).</p>"
                           +"<img style='height: 400px; width:400px' src='http://people.umass.edu/bprickett/Opacity_Denial/cat plus plural example.png'>"
                    }
              ]);
   items.push([
-                  "Instr3",
+                  "Instr3.5",
                   "Message",
                   {html:
                           "<h1>How you’ll learn... (Continued)</h1>"
-                          +"<p>Next, you’ll see an ‘=’ symbol and an image demonstrating the meaning that results from adding that suffix to the noun."
+                          +"<p>On the next screen, you’ll see an ‘=’ symbol and an image demonstrating the meaning that results from combining that suffix with the noun."
                           +" A <span style='color:red;font-weight:bold;'>red</span> box will appear around this image and you’ll hear how the noun and suffix are pronounced when they’re added together.</p>"
                           +"<img style='height: 400px; width:400px' src='https://people.umass.edu/bprickett/Opacity_Denial/equals cats example.png'>"
                    }
@@ -572,23 +663,49 @@ items.push([
 //Learning the affixes   
 items.push(["compQ3", "Question", {q:"What will appear after the ‘=’ symbol?", hasCorrect:"A picture of what the noun+suffix means", as:["A picture of what the noun+suffix means", "A picture of what just the suffix means", "A picture of what just the noun means"]}]);
 
+items.push([
+                  "Instr4",
+                  "Message",
+                  {html:
+                          "<h1>Summary</h1>"
+                          +"<p>Don’t worry about memorizing the nouns. You will always be told how to pronounce the noun by itself. Your job is to learn how to pronounce the noun+suffix combination for each noun and suffix you get.</p>"
+                          +"<p>On each trial, listen to the noun and the suffix and pay attention to how the resulting noun+suffix combination is pronounced.</p>"
+                          +"<p>In the Test phase of the experiment, the trials will be the same, except you will not be told the correct pronunciation of the noun+suffix combination. Instead, you will be asked to choose which of two options is the correct pronunciation of the noun+suffix.</p>"
+                   }
+              ]);
+           
+items.push(["compQ4", "Question", {q:"What should you focus on learning?", hasCorrect:"How the noun+suffix combinations are pronounced", as:["How the noun+suffix combinations are pronounced", "How the nouns are pronounced by themselves", "Which pictures go with which nouns"]}]);
+
     
 //Linguistics lesson pages:
 items.push([
-                   "Instr4", 
+                   "Instr5", 
                    "Message", 
                    {html: 
-                         "<h1>Practice in English</h1>"+
+                         "<h1>Practice Training in English</h1>"+
                          "<p>Now that you know how the experiment will work, you’re ready to do some practice trials in English."+
-                         " Remember to pay attention to how both the words and suffixes are pronunced when they get added together.</p>"
+                         " Remember to pay attention to how both the words and suffixes are pronunced when they are combined.</p>"
                          
                    }
              ]);
         
-items = items.concat(practice_items);        
+items = items.concat(practice_items);     
+     
+items.push([
+                   "Instr6",
+                   "Message",
+                   {html:
+                         "<h1>Practice Testing in English</h1>"+
+                         "<p>Ok, that’s how the Training phase of the experiment will work. Once training is done, you will enter the Testing phase."+
+                         " Using English examples for practice, the next few trials will show you how the Test phase will work.</p>"
+                         
+                   }
+             ]); 
+        
+items = items.concat(practice_test_items);     
         
 items.push([
-                   "Instr5", 
+                   "Instr7", 
                    "Message", 
                    {html: 
                          "<h1>Alien Suffixes</h1>"+
@@ -598,27 +715,28 @@ items.push([
                          
                    }
              ]);
-items.push(["compQ5", "Question", {q:"What do the alien suffixes express?", hasCorrect:"Directions", as:["Directions", "Plurality", "Past Tense"]}]);
+items.push(["compQ7", "Question", {q:"What do the alien suffixes express?", hasCorrect:"Directions", as:["Directions", "Plural", "Past Tense"]}]);
         
 items.push([
-                   "Instr6",
+                   "Instr8",
                    "Message",
                    {html:
                          "<h1>Alien Suffixes (Continued)</h1>"+
                          "<ul><li>To illustrate the suffix meanings, we’ll use a red arrow that’s either to the left, right, or in front of an empty box."+
-                         "<li>Then, to demonstrate the meaning of a noun+suffix pair, we'll have the arrow positioned relative to a picture of a noun.</ul>"+
+                         "<li>Then, to demonstrate the meaning of a noun+suffix combination, we'll have the arrow positioned relative to a picture of a noun.</ul>"+
                          "Just like the English examples, audio will play for each image and a <span style='color:red;font-weight:bold;'>red</span> box will show you which image the audio corresponds to.</p>"+
                          "<img style='height: 400px; width:600px' src='http://people.umass.edu/bprickett/Opacity_Denial/cat plus front example.png'>"
                    }
              ]);
-items.push(["compQ6", "Question", {q:"What in the images will represent the directions being given?", hasCorrect:"A red arrow", as:["A red arrow", "A pointing finger", "A circle"]}]);        
+items.push(["compQ8", "Question", {q:"What in the images will represent the directions being given?", hasCorrect:"A red arrow", as:["A red arrow", "A pointing finger", "A circle"]}]);        
     
-items.push(["Instr7", "Message", 
+items.push(["Instr9", "Message", 
                    {
                        html: "<h1>Training Phase Start</h1><div>"
                              +"<p>Now you’re ready to start the experiment’s training phase. Remember:"
-                             +"<ul><li>Pay attention to how words and suffixes are pronounced—both by themselves and when they’re combined.</li>"
-                             +"<li>Don’t worry about memorizing individual nouns. Instead, learn the general changes that occur when different suffixes are added.</li>"
+                             +"<ul><li>Pay attention to how words and suffixes are pronounced&mdash;both by themselves and when they’re combined.</li>"
+                             +"<li>Don’t worry about memorizing individual nouns or pictures.</li>"
+                             +"<li>Your job is to learn how to pronounce the noun+suffix combination for each noun and suffix.</li>"
                              +"<li>There will be breaks throughout, so if you need to rest, wait for one of those to occur.</li></ul>"
                              +"Good luck!</p>"
                    }
@@ -685,8 +803,8 @@ items = items.concat([
                    "Message", 
                    {
                        html: "<h1>Test Phase</h1>"+
-                             "<p>Now you will begin the Test Phase. Unlike the trials in training, you will no longer be give the correct noun+suffix combination. Instead, after hearing each noun and suffix by themsevels, you'll be asked to choose between two combined forms.</p>"+
-                             "<p>Sometimes, you may need to choose between two answers that both seem incorrect. Do your best to choose the word that seems the <i>most right</i> in these situations.</p>"
+                             "<p>Now you will begin the Test Phase. Unlike the trials in training, you will no longer be given the correct noun+suffix combination. Instead, after hearing each noun and suffix, you’ll be asked to choose between two different pronunciations of the noun+suffix.</p>"+
+                             "<p>It’s ok if you are not totally sure. Choose the option that sounds the most like it comes from the alien language you learned in Training.</p>"
                    }
                ],
                ["sr", "__SendResults__", { }],
@@ -710,26 +828,26 @@ items = items.concat([
           ]);
 
 //Define sequence of experiment; preload must be first
-var all_trials = [
+var all_trials = [  
                     "preload_img","preload_audio",  
-                    "intro", "headphone_check",  "Instr0", "compQ1", "comp_feedback",
-                    "Instr1", "compQ2", "comp_feedback", "Instr2",  
-                    "Instr3", "compQ3", "comp_feedback", "Instr4"
+                    "intro", "headphone_check",  "Instr0", "compQ0", "comp_feedback",
+                    "Instr1", "compQ1", "comp_feedback", "Instr2", "compQ2", "comp_feedback",  
+                    "Instr3", "Instr3.5","compQ3", "comp_feedback", "Instr4", "compQ4", "comp_feedback", "Instr5"
                   ];
- all_trials = all_trials.concat(practice_names);   
- all_trials = all_trials.concat([   
-                    "Instr5", "compQ5", "comp_feedback", "Instr6","compQ6", "comp_feedback", "Instr7"
+all_trials = all_trials.concat(practice_names);   
+all_trials = all_trials.concat([   
+                    "Instr6"
+                 ]);
+all_trials = all_trials.concat(practice_test_names);   
+all_trials = all_trials.concat([   
+                    "Instr7", "compQ7", "comp_feedback", "Instr8","compQ8", "comp_feedback", "Instr9"
                  ]);
                 
 all_trials = all_trials.concat(train_names);
 all_trials = all_trials.concat(["phaseSeperator"]);
 all_trials = all_trials.concat(test_names);
 all_trials = all_trials.concat(["survey", "sr", "end"]);
-            
-//For debugging:
-if (test_run){
- all_trials = ["intro", "suffUR_stem_1", "suffUR_choice_1","human_feedback", "survey", "sr", "end"];
-}    
+           
        
 //Send all of this info to the Ibex scripts that actually make the webpage:
 var shuffleSequence = seq(...all_trials);
